@@ -1,0 +1,54 @@
+{% extends "Base.html" %}
+{% block title %}Home{% endblock title %}
+{% block content  %}
+<head>
+    {% load static %}
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Signup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200&family=Roboto+Slab&family=Signika&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="{% static 'Signup copy.css' %}">
+</head>
+ <body>
+
+    
+    <div class="split">
+
+
+        <h2 style="font-size: 30px; color: black; font-weight: bold; text-align: center; font-family: 'Eczar'; padding-top: 25px;">Signup as Student </h2>
+
+        
+        <form style="margin-top: 20px;" method="post" action="\upload">
+            {% csrf_token %}
+           
+            <input type="text" id="name" placeholder="Enter name" name="name" required><br><br><br>
+
+            <input type="text" id="roll_no" placeholder="Enter Enrollment number" name="roll_no" required><br><br><br>
+            <input type="text" id="roll_no" placeholder="Choose a Classroom" name="roll_no" required><br><br><br>
+           
+            <select name="classroom" id="classroom">
+                {% for x in assignments %}
+              <option value="{{x.name}}" name ="classroom">{{x.name}}</option>
+              {% endfor %}
+            </select>
+
+            
+            <input type="file" id="file" placeholder="Upload file" name="file" required><br><br><br>
+            
+            <input type="url" id="link" placeholder="Upload drive link" name="link" required><br><br><br>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </div>
+ </body>
+
+{% endblock content  %}

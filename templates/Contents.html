@@ -1,0 +1,50 @@
+{% extends "Base.html" %}
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Main </title>
+    <link rel="stylesheet" href="{% static 'Contents.css' %}">
+   
+</head>
+<body>
+  <h1  style = "text-align: center; font-family: Times New Roman;"> Contents </h1>
+  <div class="heading">
+    <h1>{{x.course.name}}</h1>
+  </div>
+  {% for x in content %}
+   
+    <div class="section-container">
+        <div class="section-heading">{{x.name}}</div>
+        <div class="video-list">
+          <div class="video-item"><a href="/view/{{x.content_id}}">{{x.title}}</a></div>
+        </div>
+      </div>
+    {% endfor %}
+    
+    
+      <script>
+        // JavaScript to toggle the video list when clicking section headings
+        const sectionHeadings = document.querySelectorAll('.section-heading');
+    
+        sectionHeadings.forEach((heading) => {
+          heading.addEventListener('click', () => {
+            const videoList = heading.nextElementSibling;
+            if (videoList.style.display === 'none' || videoList.style.display === '') {
+              videoList.style.display = 'block';
+            } else {
+              videoList.style.display = 'none';
+            }
+          });
+        });
+      </script>
+</body>
+</html>
+
+{% endblock content %}

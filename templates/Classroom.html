@@ -1,0 +1,31 @@
+{% extends "Base.html" %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Classroom</title>
+    <link rel="stylesheet" href="{% static 'Classroom.css' %}">
+   
+</head>
+<body>
+    <div class="heading" ><h1>All Classrooms</h1></div>
+    <div class="course-catalog">
+        <!-- First Row -->
+        {% for x in classroom %}
+        <div class="course">
+            <img src="media\classroom.jpg" alt="Course 1">
+            <h3>Prof.{{x.full_name}}</h3>
+            <a href="/filter/{{x.id}}">View Classroom</a>
+        </div>
+        {% endfor %}  
+        <!-- Repeat for the remaining courses -->
+    </div>
+</body>
+</html>
+{% endblock content %}

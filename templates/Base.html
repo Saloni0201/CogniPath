@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Management System</title>
+    <link rel="stylesheet" href="{% static 'Base.css' %}">
+  
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="{% static 'Logo.png' %}" alt="Logo">
+                
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'Home' %}">Home</a></li>
+                <li><a href="{% url 'Signup' %}">Signup</a></li>
+                <li><a href="{% url 'Login' %}">Login</a></li>
+                <li><a href="/admin">Login as Teacher</a></li>
+                <li><a href="{% url "Logout" %}">Logout</a></li>
+                <li><a href="{% url "classroom" %}">Classroom</a></li>
+            </ul>
+           
+        </div>
+    </div>
+
+    {% block content %}{% endblock content %}
+
+    <footer class="sticky-footer">
+        <!-- <h2>Footer Stick to the Bottom</h2> -->
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <p> © Copyright CogniPath 2023.</p>
+    </footer>

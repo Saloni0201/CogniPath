@@ -1,0 +1,65 @@
+{% extends "Base.html" %} {% block title %}Login{% endblock title %} {% block
+content %}
+<head>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Signika&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200&family=Roboto+Slab&family=Signika&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="{% static 'Signup.css' %}" />
+</head>
+<body>
+  <div class="split">
+    l̥
+
+    <h2
+      style="
+        font-size: 30px;
+        color: black;
+        font-weight: bold;
+        text-align: center;
+        font-family: 'Eczar';
+        margin-left: 22px;
+        padding-top: 25px;
+      "
+    >
+      Login
+    </h2>
+
+    <form style="margin-top: 20px" method="post" action="\login">
+      {% csrf_token %}
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Enter username"
+        name="username"
+        required
+      /><br /><br /><br />
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter password"
+        name="password"
+        required
+      /><br /><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+
+{% endblock content %}

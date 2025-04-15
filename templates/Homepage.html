@@ -1,0 +1,41 @@
+{% extends "Base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Management System</title>
+    <link rel="stylesheet" href="{% static 'Home.css' %}">
+   
+</head>
+<body>
+    
+    <div class="head-container">
+        <div class="quote">
+            <h1>The beautiful thing about <span>learning </span> is that nobody can take it away from you!</h1> <br> <br> 
+            <h5>Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. Educational methods include teaching, training, storytelling, discussion and directed research!
+                Bright Your FutureWith the help of E-Learning , create your own path and
+drive on your skills on your own to achieve what you seek.
+Build a deep,solid understanding in your core subject.
+
+
+            </h5> 
+        </div>
+        <div class="svg-image">
+            <div id="gola">
+            <img src="{% static 'Homepage.jpg' %}" alt="svg">
+        </div>
+    </div>
+<div class="v">
+	<video autoplay muted loop src="{% static 'E-Learning.mp4' %}"></video>
+ </div>
+ 
+</body>
+</html>
+
+
+{% endblock content %}
+
+

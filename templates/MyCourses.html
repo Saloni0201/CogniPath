@@ -1,0 +1,36 @@
+{% extends "Base.html" %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>My Learning</title>
+
+</head>
+<link rel="stylesheet" href="{% static 'Classroom.css' %}">
+<body>
+   <div class="heading">
+    <h1>My Learning</h1>
+   </div>
+
+   <div class="course-catalog">
+
+    {% for x in course %}
+    <div class="course">
+        <img src="\media\course.jpg" alt="Course 1">
+        <h3>{{x.course.name}}</h3>
+        <a href="/contents/{{x.course.course_id}}">Start Watching</a>
+    </div>
+    {% endfor %}
+ 
+  </div>
+</body>
+</html>
+
+{% endblock content %}

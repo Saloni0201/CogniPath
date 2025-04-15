@@ -1,0 +1,36 @@
+{% extends "Base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>course Overview</title>
+    <link rel="stylesheet" href="{% static 'Course.css' %}">
+</head>
+<body>    
+    <div class="course-container">
+        <div class="course-details">
+            <h2 class="course-heading">{{course.name}}</h2>
+            <p class="course-description">
+                {{course.description}}
+            <div class="button-container">
+                {% if check_enrollment is None  %}
+                <a class="enroll-button" href="/checkout/{{course.course_id}}">Enroll Now</a>
+                {% else %}
+                <a class="test-button" href="/contents/{{course.course_id}}">View Contents</a>
+                <a class="test-button" href="/assignments/{{course.course_id}}">View Assignments</a>
+                <a class="test-button" href="/notes/{{course.course_id}}">View Notes</a>
+                <a class="test-button" href="/upload">Upload Assignment</a>
+                
+                {% endif %}
+            </div>
+        </div>
+        <div class="course-image"> <img class="main-img" src="\media\course.jpg" alt=""></div>
+    </div>
+</body>
+</html>
+
+
+{% endblock content %}
